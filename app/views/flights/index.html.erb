@@ -1,6 +1,11 @@
 <h1>Flight Booker</h1>
 
-<% @flights.each do |flight| %>
-    <%= flight %>
-    <br>
-<%end%>
+<%= form_tag(root_path, method: :get) do %>
+    <%= label_tag "departing_airport_id", "From" %>
+    <%= select_tag(:departing_airport_id, options_for_select(@departing_options)) %>
+
+    <%= label_tag "arriving_airport_id", "To" %>
+    <%= select_tag(:arriving_airport_id, options_for_select(@arriving_options)) %>
+    
+    <%= submit_tag ("Search") %>
+  <% end %>
