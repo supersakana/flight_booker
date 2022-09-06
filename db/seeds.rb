@@ -13,3 +13,6 @@ Airport.create(code: 'ORF', location: 'Norfolk, Virginia')
 Airport.create(code: 'MIA', location: 'Miami, Florida')
 Airport.create(code: 'LIR', location: 'Liberia, Costa Rica')
 
+Flight.create(departure_airport_id: 1, arrival_airport_id: 2)
+Flight.create(departure_airport_id: 3, arrival_airport_id: 4)
+Flight.create(departure_airport_id: 5, arrival_airport_id: 6)
