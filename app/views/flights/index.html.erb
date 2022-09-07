@@ -9,6 +9,9 @@
 
     <%= f.label :date, "Date" %>
     <%= f.date_select :date %>
+
+    <%= f.label :passenger_count, "# of Passengers" %>
+    <%= f.select(:passenger_count, [1, 2, 3, 4]) %>
     
     <%= submit_tag ("Search") %>
   <% end %>
