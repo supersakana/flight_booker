@@ -15,3 +15,9 @@
     
     <%= f.submit "Search" %>
   <% end %>
+
+  <h1>Avalible Flights</h1>
+  <% @search_results.each do |f| %>
+    <%= f.from %>
+    <%= f.to %>
+  <% end %>
