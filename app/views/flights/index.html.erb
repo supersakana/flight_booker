@@ -1,6 +1,6 @@
 <h1>Flight Booker</h1>
 
-<%= form_with url: "/flights", method: :get do |f| %>
+<%= form_with url: "/flights", method: :get, remote: true do |f| %>
     <%= f.label :departure_airport_id, "From" %>
     <%= f.select(:departure_airport_id, options_for_select(@departing_options)) %>
 
