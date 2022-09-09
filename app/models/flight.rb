@@ -11,7 +11,7 @@ class Flight < ApplicationRecord
   end
 
   def self.search(search_params)
-    where('departure_airport_id == ?', search_params[:departure_airport_id]) &&
-      where('arrival_airport_id == ?', search_params[:arrival_airport_id])
+    where('departure_airport_id == ? AND arrival_airport_id == ?',
+          search_params[:departure_airport_id], search_params[:arrival_airport_id])
   end
 end

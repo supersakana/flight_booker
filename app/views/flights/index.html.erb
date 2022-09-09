@@ -1,11 +1,11 @@
 <h1>Flight Booker</h1>
 
 <%= form_with url: "/flights", method: :get do |f| %>
-    <%= f.label :departing_airport_id, "From" %>
-    <%= f.select(:departing_airport_id, options_for_select(@departing_options)) %>
+    <%= f.label :departure_airport_id, "From" %>
+    <%= f.select(:departure_airport_id, options_for_select(@departing_options)) %>
 
-    <%= f.label :arriving_airport_id, "To" %>
-    <%= f.select(:arriving_airport_id, options_for_select(@arriving_options)) %>
+    <%= f.label :arrival_airport_id, "To" %>
+    <%= f.select(:arrival_airport_id, options_for_select(@arriving_options)) %>
 
     <%= f.label :passenger_count, "Passengers" %>
     <%= f.select(:passenger_count, [1, 2, 3, 4]) %>
