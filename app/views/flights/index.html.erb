@@ -16,14 +16,20 @@
     <%= f.submit "Search" %>
   <% end %>
 
-<h1>Avalible Flights</h1>
+<% unless @search_results.empty? %>
+    <h1>Avalible Flights</h1>
 
-<%= form_with method: :get do |f| %>
-    <% @search_results.each do |booking| %>
-        <div>
-            <%= f.radio_button :booking, "#{booking.id}" %>
-            <%= f.label :booking_option, "#{booking.from} - #{booking.to}" %>
-        </div>
+    <%= form_with method: :get do |f| %>
+        <%= f.hidden_field :passenger_count, :value => @passengers %>
+
+        <% @search_results.each do |booking| %>
+            <div>
+                <%= f.radio_button :booking, "#{booking.id}" %>
+                <%= f.label :booking_option, "#{booking.from} - #{booking.to}" %>
+            </div>
+        <% end %>
+
+        <%= f.submit "Submit" %>
     <% end %>
-    <%= f.submit "Submit" %>
 <% end %>
+
