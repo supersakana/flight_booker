@@ -22,14 +22,13 @@
     <%= form_with url: "bookings/new", method: :get do |f| %>
         <%= f.hidden_field :passenger_count, :value => @passengers %>
 
-        <% @search_results.each do |booking| %>
+        <% @search_results.each do |flight| %>
             <div>
-                <%= f.radio_button :booking, "#{booking.id}" %>
-                <%= f.label :booking_option, "#{booking.from} - #{booking.to}" %>
+                <%= f.radio_button :flight, "#{flight.id}" %>
+                <%= f.label :flight_option, "#{flight.from} - #{flight.to}" %>
             </div>
         <% end %>
 
         <%= f.submit "Submit" %>
     <% end %>
 <% end %>
-
