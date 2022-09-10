@@ -24,8 +24,8 @@
 
         <% @search_results.each do |flight| %>
             <div>
-                <%= f.radio_button :flight, "#{flight.id}" %>
-                <%= f.label :flight_option, "#{flight.from} - #{flight.to}" %>
+                <%= f.radio_button :flight_id, "#{flight.id}" %>
+                <%= f.label :flight_id, "#{flight.from} - #{flight.to}" %>
             </div>
         <% end %>
 

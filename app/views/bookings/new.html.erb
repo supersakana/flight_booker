@@ -1,1 +1,29 @@
 <h1>Booking</h1>
+
+<%= form_with model: @booking, url: "bookings/new" do |f| %>
+
+    <p>ID: <%= @flight.id %>
+    From: <%= @flight.from %>
+    To: <%= @flight.to %>
+    </p>
+
+
+    <% @passengers.times do |p_num| %>
+       <%= f.fields_for :passengers do |p_form| %>
+           <div>
+                <%= p_form.hidden_field :flight_id, :value => @flight.id %>
+
+                <%= "Passenger #{p_num + 1}"%>
+
+                <%= p_form.label :name, "Name" %>
+                <%= p_form.text_field :name %>
+
+                <%= p_form.label :email, "Email" %>
+                <%= p_form.text_field :email %>
+           </div>
+        <% end %>
+    <% end %>
+    <br>
+    <%= f.submit "Book" %>
+<% end %>
+
