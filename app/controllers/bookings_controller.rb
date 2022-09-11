@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :set_booking, only: %i[show edit update destroy]
+
   def new
     @booking = Booking.new
     @flight = Flight.find(params[:flight_id])
@@ -6,10 +8,26 @@ class BookingsController < ApplicationController
     @p_num.times { @booking.passengers.build }
   end
 
+  def create
+    @booking = Booking.new(booking_params)
 
-  # private
+    if @booking.save
+      redirect_to @booking
+    else
+      render :new, status: :unprocessable_entity
+      render json: @booking.errors, status: :unprocessable_entity
+    end
+  end
 
-  # def booking_params
-  #   params.require(:booking).permit(:passenger_id, :flight_id)
-  # end
+  def show; end
+
+  private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
+  def booking_params
+    params.require(:booking).permit(:flight_id, passengers_attributes: %i[id name email])
+  end
 end
