@@ -1,0 +1,15 @@
+<%= form_with url: "/flights", method: :get, remote: true do |f| %>
+    <%= f.label :departure_airport_id, "From" %>
+    <%= f.select(:departure_airport_id, options_for_select(@departing_options)) %>
+
+    <%= f.label :arrival_airport_id, "To" %>
+    <%= f.select(:arrival_airport_id, options_for_select(@arriving_options)) %>
+
+    <%= f.label :passenger_count, "Passengers" %>
+    <%= f.select(:passenger_count, [1, 2, 3, 4]) %>
+
+    <%= f.label :date, "Date" %>
+    <%= f.datetime_select :date %>
+    
+    <%= f.submit "Search" %>
+<% end %>
