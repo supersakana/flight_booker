@@ -1,12 +1,16 @@
 <h3>Avalible Flights</h3>
 
+<p><%= "#{@search_results[0].date.strftime("%B %d %Y")} ~
+    #{@search_results[0].from} - #{@search_results[0].to}"%></p>
+
 <%= form_with url: "bookings/new", method: :get do |f| %>
+
     <%= f.hidden_field :passenger_count, :value => @passengers %>
 
     <% @search_results.each do |flight| %>
         <div>
             <%= f.radio_button :flight_id, "#{flight.id}" %>
-            <%= f.label :flight_id, "#{flight.details}" %>
+            <%= f.label :flight_id, "#{flight.time.strftime('%I:%M %p')}" %>
         </div>
     <% end %>
 
