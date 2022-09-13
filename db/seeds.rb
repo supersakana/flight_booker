@@ -7,15 +7,15 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Airport.create(code: 'ATL', location: 'Atlanta, Georgia')
-Airport.create(code: 'DFW', location: 'Dallas, Texas')
-Airport.create(code: 'DEN', location: 'Denver, Colorado')
 Airport.create(code: 'ORF', location: 'Norfolk, Virginia')
 Airport.create(code: 'MIA', location: 'Miami, Florida')
 Airport.create(code: 'LIR', location: 'Liberia, Costa Rica')
 
-Flight.create(departure_airport_id: 1, arrival_airport_id: 2, duration: 2)
-Flight.create(departure_airport_id: 2, arrival_airport_id: 1, duration: 2)
-Flight.create(departure_airport_id: 3, arrival_airport_id: 6, duration: 2)
-Flight.create(departure_airport_id: 4, arrival_airport_id: 5, duration: 2)
-Flight.create(departure_airport_id: 5, arrival_airport_id: 4, duration: 2)
-Flight.create(departure_airport_id: 6, arrival_airport_id: 3, duration: 2)
+(Date.today..Date.today + 31).to_a.each do |d|
+  [Time.now, Time.now + 60, Time.now - 60].each do |t|
+    Flight.create(departure_airport_id: 1, arrival_airport_id: 2, date: d, time: t.strftime('%H:%M'))
+    Flight.create(departure_airport_id: 2, arrival_airport_id: 3, date: d, time: t.strftime('%H:%M'))
+    Flight.create(departure_airport_id: 3, arrival_airport_id: 4, date: d, time: t.strftime('%H:%M'))
+    Flight.create(departure_airport_id: 4, arrival_airport_id: 1, date: d, time: t.strftime('%H:%M'))
+  end
+end
