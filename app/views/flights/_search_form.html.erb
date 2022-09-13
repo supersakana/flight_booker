@@ -1,9 +1,9 @@
 <%= form_with url: "/flights", method: :get, remote: true do |f| %>
     <%= f.label :departure_airport_id, "From" %>
-    <%= f.select(:departure_airport_id, options_for_select(@departing_options.uniq)) %>
+    <%= f.select(:departure_airport_id, options_for_select(@airports)) %>
 
     <%= f.label :arrival_airport_id, "To" %>
-    <%= f.select(:arrival_airport_id, options_for_select(@arriving_options.uniq)) %>
+    <%= f.select(:arrival_airport_id, options_for_select(@airports)) %>
 
     <%= f.label :passenger_count, "Passengers" %>
     <%= f.select(:passenger_count, [1, 2, 3, 4]) %>
