@@ -8,14 +8,13 @@
 
 Airport.create(code: 'ATL', location: 'Atlanta, Georgia')
 Airport.create(code: 'ORF', location: 'Norfolk, Virginia')
-Airport.create(code: 'MIA', location: 'Miami, Florida')
-Airport.create(code: 'LIR', location: 'Liberia, Costa Rica')
 
-(Date.today..Date.today + 31).to_a.each do |d|
-  [Time.now, Time.now + 60, Time.now - 60].each do |t|
-    Flight.create(departure_airport_id: 1, arrival_airport_id: 2, date: d, time: t.strftime('%H:%M'))
-    Flight.create(departure_airport_id: 2, arrival_airport_id: 3, date: d, time: t.strftime('%H:%M'))
-    Flight.create(departure_airport_id: 3, arrival_airport_id: 4, date: d, time: t.strftime('%H:%M'))
-    Flight.create(departure_airport_id: 4, arrival_airport_id: 1, date: d, time: t.strftime('%H:%M'))
+today = Date.today.strftime('%Y-%m-%d')
+month_later = (Date.today + 31).strftime('%Y-%m-%d')
+
+(today..month_later).to_a.each do |d|
+  ['8:00AM', '12:00PM', '6:00PM'].each do |t|
+    Flight.create(departure_airport_id: 1, arrival_airport_id: 2, date: d, time: t)
+    Flight.create(departure_airport_id: 2, arrival_airport_id: 1, date: d, time: t)
   end
 end
