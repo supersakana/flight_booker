@@ -1,7 +1,9 @@
-<h1>Flight Booker</h1>
+<div class="flex flex-col justify-center h-screen">
+    <h1 class="text-5xl mb-4 font-bold">FlightBooker</h1>
 
-<%= render 'search_form' %>
+        <%= render 'search_form' %>
 
-<% unless @search_results.empty? %>
-    <%= render 'search_results' %>
-<% end %>
+        <% unless @search_results.empty? %>
+            <%= render 'search_results' %>
+        <% end %>
+</div>

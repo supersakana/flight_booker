@@ -1,15 +1,17 @@
-<%= form_with url: "/flights", method: :get, remote: true do |f| %>
-    <%= f.label :departure_airport_id, "From" %>
-    <%= f.select(:departure_airport_id, options_for_select(@airports)) %>
+<div class="mb-4">
+    <%= form_with url: "/flights", method: :get, remote: true do |f| %>
+        <%= f.label :departure_airport_id, "From" %>
+        <%= f.select(:departure_airport_id, options_for_select(@airports)) %>
 
-    <%= f.label :arrival_airport_id, "To" %>
-    <%= f.select(:arrival_airport_id, options_for_select(@airports)) %>
+        <%= f.label :arrival_airport_id, "To" %>
+        <%= f.select(:arrival_airport_id, options_for_select(@airports)) %>
 
-    <%= f.label :passenger_count, "Passengers" %>
-    <%= f.select(:passenger_count, [1, 2, 3, 4]) %>
+        <%= f.label :passenger_count, "Passengers" %>
+        <%= f.select(:passenger_count, [1, 2, 3, 4]) %>
 
-    <%= f.label :date, "Date" %>
-    <%= f.date_field :date %>
-    
-    <%= f.submit "Search" %>
-<% end %>
+        <%= f.label :date, "Date" %>
+        <%= f.date_field :date %>
+        
+        <%= f.submit "Search" %>
+    <% end %>
+</div>
