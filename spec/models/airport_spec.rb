@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Airport, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#info' do
+    it "returns the airport's code and location" do
+      airport = Airport.new(code: 'ORF', location: 'Norfolk, Virginia')
+      expect(airport.info).to eq('ORF Norfolk, Virginia')
+    end
+  end
 end

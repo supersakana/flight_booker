@@ -11,14 +11,14 @@ class Flight < ApplicationRecord
   end
 
   def from
-    "#{departure_airport.code}, #{departure_airport.location}"
+    departure_airport.info
   end
 
   def to
-    "#{arrival_airport.code}, #{arrival_airport.location}"
+    arrival_airport.info
   end
 
   def details
-    "#{time.strftime('%H:%M')} #{date.strftime('%Y-%m-%d')} #{from} - #{to}"
+    "#{time.strftime('%I:%M %p')} #{date.strftime('%Y-%m-%d')} #{from} - #{to}"
   end
 end
