@@ -15,6 +15,8 @@ RSpec.feature 'SearchFlights', type: :feature do
     click_on 'Search'
     formatted_date = Date.tomorrow.strftime('%B %d %Y')
     sleep(3)
+    
     expect(page).to have_content("#{formatted_date} | ATL Atlanta, Georgia - ORF Norfolk, Virginia")
+    expect(page).to have_content('08:00 AM')
   end
 end
