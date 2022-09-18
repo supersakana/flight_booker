@@ -6,12 +6,16 @@
 
     <%= f.hidden_field :passenger_count, :value => @passengers %>
 
-    <% @search_results.each do |flight| %>
-        <div>
-            <%= f.radio_button :flight_id, "#{flight.id}" %>
-            <%= f.label :flight_id, "#{flight.time.strftime('%I:%M %p')}" %>
-        </div>
-    <% end %>
+    <div class='flex flex-col items-center md:flex-none md:items-start'>
+        <% @search_results.each do |flight| %>
+            <div class='mt-3 md:mt-0'>
+                <%= f.radio_button :flight_id, "#{flight.id}" %>
+                <%= f.label :flight_id, "#{flight.time.strftime('%I:%M %p')}" %>
+            </div>
+        <% end %>
 
-    <%= f.submit "Submit" %>
+        <div class='mt-3'>
+            <%= f.submit "Submit" %>
+        </div>
+    </div>
 <% end %>
