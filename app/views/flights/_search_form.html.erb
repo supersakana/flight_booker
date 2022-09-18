@@ -1,5 +1,5 @@
 <div class="mb-4">
-    <%= form_with url: "/flights", method: :get, :html => {:class => 'md:flex items-center gap-2'}, remote: true do |f| %>
+    <%= form_with url: "/flights", method: :get, :html => {:class => 'flex-none md:flex items-center gap-2'}, remote: true do |f| %>
         <div class="flex flex-col md:flex-row gap-1">
             <%= f.label :departure_airport_id, "From" %>
             <%= f.select(:departure_airport_id, options_for_select(@airports)) %>
@@ -20,7 +20,7 @@
             <%= f.date_field :date %>
         </div>
         
-        <div>
+        <div class='flex justify-center mt-3 md:mt-0'>
             <%= f.submit "Search" %>
         </div>
     <% end %>
