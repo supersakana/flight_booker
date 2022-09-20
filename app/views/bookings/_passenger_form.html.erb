@@ -4,19 +4,12 @@
         <% i = 1 %>
 
             <%= f.fields_for :passengers do |p_form| %>
-                <h4 class="text-xl"><%= "Passenger #{i}" %><h4>
-                <div class="flex gap-x-1 my-2">
-                    <div>
-                        <%= p_form.label :name, "Name" %>
-                        <%= p_form.text_field :name %>
-                    </div>
-
-                    <div>
-                        <%= p_form.label :email, "Email" %>
-                        <%= p_form.text_field :email %>
-                    </div>
+                <div class="flex flex-col mb-4 md:flex-row md:justify-between md:gap-6">
+                    <h4 class="text-lg"><%= "Passenger #{i}" %><h4>
+                    <%= p_form.text_field :name, placeholder: "Passenger's Name" %>
+                    <%= p_form.text_field :email, placeholder: "name@example.com" %>
                 </div>
                 <% i += 1 %>
             <% end %>
-            <%= f.submit "Book" %>
+            <%= f.submit "Submit" %>
         <% end %>

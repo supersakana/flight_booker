@@ -1,10 +1,7 @@
-<div class="flex items-center gap-x-3">
-    <h4 class="text-xl italic">Flight Details:</h4>
-    <div>
-        <p>ID: <%= @flight.id %></p>
-        <p>From: <%= @flight.from %></p>
-        <p>To: <%= @flight.to %></p>
-    </div>
+<div class="text-xl">
+    <%= "#{@flight.date.strftime("%B %d %Y")}, " %>
+    <%= @flight.time.strftime('%I:%M %p') %>
+    <%= "| #{@flight.departure_airport.code} - #{@flight.arrival_airport.code}" %>
 </div>
 
 

@@ -19,8 +19,12 @@ body, html{
     font-family: 'Poppins', sans-serif;
 }
 input[type = date],
-input[type = text]{
+input[type = text],
+select{
     background-color: #e8e9ec;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin: 2px 0px
 }
 
 input[type = submit]{
@@ -28,14 +32,10 @@ input[type = submit]{
     color: #ffffff;
     cursor: pointer;
     border-radius: 8px;
-    padding: 5px 7px;
+    padding: 3px 15px;
     margin: 3px;
 }
 
 input[type = submit]:hover{
     background: rgb(57, 166, 255);
-}
-
-label{
-    margin-right: 3px;
 }
