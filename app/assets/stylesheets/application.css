@@ -18,7 +18,8 @@
 body, html{
     font-family: 'Poppins', sans-serif;
 }
-input[type = date]{
+input[type = date],
+input[type = text]{
     background-color: #e8e9ec;
 }
 
@@ -33,4 +34,8 @@ input[type = submit]{
 
 input[type = submit]:hover{
     background: rgb(57, 166, 255);
+}
+
+label{
+    margin-right: 3px;
 }
