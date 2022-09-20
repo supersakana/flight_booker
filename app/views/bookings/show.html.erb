@@ -1,12 +1,23 @@
-<h1>Flight booked!</h1>
+<div class="flex flex-col justify-center items-center gap-y-8 h-screen mx-3">
+    <h1 class="text-5xl mb-4 font-bold">Summary</h1>
+    <div class="flex flex-col gap-8 md:flex-row">
+        <div class="flex flex-col">
+            <h3 class="text-2xl underline text-center mb-4">Flight</h3>
+            <ul class="flex flex-col gap-y-4">
+                <li><%= "From: #{@booking.flight.from}" %></li>
+                <li><%="To: #{@booking.flight.to}" %></li>
+                <li><%="Date: #{@booking.flight.date.strftime("%B %d %Y")}" %></li>
+                <li><%="Time: #{@booking.flight.time.strftime('%I:%M %p')}" %></li>
+            </ul>
+        </div>
 
-<%= @booking.id %>
-<%= @booking.flight.from %>
-<%= @booking.flight.to %>
-<br>
-<% @booking.passengers.each do |passenger| %>
-
-    <%= passenger.name %>
-    <%= passenger.email %>
-    <br>
-<% end %>
+        <div class="flex flex-col">
+            <h3 class="text-2xl underline text-center mb-4">Passengers</h3>
+            <ul class="flex flex-col gap-y-4">
+            <% @booking.passengers.each do |passenger| %>
+                <li><%= "Name: #{passenger.name} Email: #{passenger.email}" %></li>
+            <% end %>
+            </ul>
+        </div>
+    </div>
+</div>
