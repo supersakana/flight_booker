@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
 
     if @booking.save
+      flash[:notice] = 'Booking successfully completed!'
       redirect_to @booking
     else
       render :new, status: :unprocessable_entity
