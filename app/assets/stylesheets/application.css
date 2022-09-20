@@ -24,7 +24,7 @@ select{
     background-color: #e8e9ec;
     padding: 3px 10px;
     border-radius: 3px;
-    margin: 2px 0px
+    margin: 4px 0px
 }
 
 input[type = submit]{
