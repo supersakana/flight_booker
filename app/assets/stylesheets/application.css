@@ -27,7 +27,8 @@ select{
     margin: 4px 0px
 }
 
-input[type = submit]{
+input[type = submit], 
+.button{
     background: rgb(47, 127, 255);
     color: #ffffff;
     cursor: pointer;
@@ -36,6 +37,7 @@ input[type = submit]{
     margin: 3px;
 }
 
-input[type = submit]:hover{
+input[type = submit]:hover, 
+.button:hover{
     background: rgb(57, 166, 255);
 }
