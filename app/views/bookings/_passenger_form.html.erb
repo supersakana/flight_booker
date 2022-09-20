@@ -1,18 +1,22 @@
 <%= form_with model: @booking do |f| %>
         <%= f.hidden_field :flight_id, :value => @flight.id %>
 
+        <% i = 1 %>
+
             <%= f.fields_for :passengers do |p_form| %>
-                <div class="flex">
-                    <div class="flex m-2">
+                <h4 class="text-xl"><%= "Passenger #{i}" %><h4>
+                <div class="flex gap-x-1 my-2">
+                    <div>
                         <%= p_form.label :name, "Name" %>
                         <%= p_form.text_field :name %>
                     </div>
 
-                    <div class="flex m-2">
+                    <div>
                         <%= p_form.label :email, "Email" %>
                         <%= p_form.text_field :email %>
                     </div>
                 </div>
+                <% i += 1 %>
             <% end %>
             <%= f.submit "Book" %>
         <% end %>
