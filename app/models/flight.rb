@@ -18,6 +18,6 @@ class Flight < ApplicationRecord
   end
 
   def details
-    "#{time.strftime('%I:%M %p')} #{date.strftime('%Y-%m-%d')} #{from} - #{to}"
+    "#{datetime.strftime('%I:%M %p')} #{datetime.strftime('%Y-%m-%d')} #{from} - #{to}"
   end
 end
