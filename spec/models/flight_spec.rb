@@ -5,7 +5,7 @@ RSpec.describe Flight, type: :model do
   let(:atlanta) { Airport.new(code: 'ATL', location: 'Atlanta, Georgia') }
 
   subject(:flight) do
-    described_class.new(departure_airport: norfolk, arrival_airport: atlanta, date: '14 Sep 2022' , time: '8:00AM')
+    described_class.new(departure_airport: norfolk, arrival_airport: atlanta, datetime: '14 Sep 2022 8:00AM')
   end
 
   describe '#from' do
