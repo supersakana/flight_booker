@@ -25,5 +25,3 @@ class FlightsController < ApplicationController
     params.permit(:departure_airport_id, :arrival_airport_id, :passenger_count, :date, :commit)
   end
 end
-
-# https://stackoverflow.com/questions/13227345/how-to-validate-a-search-form-in-ruby-on-rails

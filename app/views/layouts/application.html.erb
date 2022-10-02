@@ -19,11 +19,8 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
-  <% unless notice.nil? %>
-    <div class="flex items-center justify-center h-8 bg-green-500 text-white text-lg "><%= notice %></div>
-  <% end %>
+   <%= render 'layouts/flash' unless flash.nil? %>
     <div class="max-w-4xl m-auto">
       <%= yield %>
     </div>
