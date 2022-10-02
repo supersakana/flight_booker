@@ -27,6 +27,7 @@ RSpec.feature 'SearchFlights', type: :feature do
     click_on 'Search'
 
     expect(page).to have_content('Search for flight...')
+    expect(page).to have_content('please input a date')
   end
 
   scenario 'departure and arrival airport are the same' do
@@ -38,5 +39,6 @@ RSpec.feature 'SearchFlights', type: :feature do
     click_on 'Search'
 
     expect(page).to have_content('Search for flight...')
+    expect(page).to have_content('departure and arrival flights should be different')
   end
 end
