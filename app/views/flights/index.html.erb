@@ -4,7 +4,7 @@
         <%= render 'search_form' %>
 
         <% if @search_results.nil? %>
-            <h4 class="text-xl italic">Search for flight...</h4>
+            <h4 class="text-center md:text-left text-xl italic">Search for flight...</h4>
         <% else %>
             <%= render 'search_results' %>
         <% end %>
