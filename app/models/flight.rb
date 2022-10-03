@@ -4,9 +4,9 @@ class Flight < ApplicationRecord
   has_many :bookings
   has_many :passengers, through: :bookings
 
-  def self.search(search_params)
+  def self.search(params)
     where(['datetime LIKE ? and departure_airport_id = ? and arrival_airport_id = ?',
-           "#{search_params[:date]}%", search_params[:departure_airport_id], search_params[:arrival_airport_id]])
+           "#{params[:date]}%", params[:departure_airport_id], params[:arrival_airport_id]])
   end
 
   def from

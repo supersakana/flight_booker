@@ -4,7 +4,7 @@
 
 <%= form_with url: "bookings/new", method: :get do |f| %>
 
-    <%= f.hidden_field :passenger_count, :value => @passengers %>
+    <%= f.hidden_field :passenger_count, :value => params[:passenger_count] %>
 
     <div class='flex flex-col items-center md:flex-none md:items-start'>
         <% @search_results.each do |flight| %>

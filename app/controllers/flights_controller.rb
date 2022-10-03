@@ -4,7 +4,6 @@ class FlightsController < ApplicationController
     return if search_params.empty?
 
     @search_results = seach_flight
-    @passengers = search_params[:passenger_count]
   end
 
   private
@@ -17,11 +16,11 @@ class FlightsController < ApplicationController
       flash.now[:alert] = 'departure and arrival flights should be different'
       render 'index'
     else
-      Flight.search(search_params)
+      Flight.search(params)
     end
   end
 
   def search_params
-    params.permit(:departure_airport_id, :arrival_airport_id, :passenger_count, :date, :commit)
+    params.permit(:departure_airport_id, :arrival_airport_id, :date)
   end
 end
