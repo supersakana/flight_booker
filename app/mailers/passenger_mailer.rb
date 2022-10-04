@@ -1,7 +1,9 @@
 class PassengerMailer < ApplicationMailer
-  def welcome_email
-    @passenger = params[:passenger]
-    # @url = 'http://example.com/login'
-    mail(to: @passenger.email, subject: 'Your flight is booked!')
+  def booking_confirmation
+    @booking = params[:booking]
+
+    @booking.passengers.each do |passenger|
+      mail(to: passenger.email, subject: 'Your flight is booked!')
+    end
   end
 end
