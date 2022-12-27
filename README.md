@@ -1,5 +1,5 @@
 # Flight Booker
 
-Project Description
+If you are viewing this repo, the updated version can be found in the link below...
 
-https://www.theodinproject.com/lessons/ruby-on-rails-flight-booker
+https://github.com/supersakana/booker_two
